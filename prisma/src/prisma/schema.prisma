@@ -1,0 +1,255 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./src/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model admin {
+  adminId            Int       @id @default(autoincrement())
+  email              String    @unique @db.VarChar(254)
+  refreshToken       String?
+  refreshTokenExpiry DateTime?
+  password           String
+  role               String    @db.VarChar(20)
+  createDate         DateTime  @default(now())
+  updatedDate        DateTime  @updatedAt
+}
+
+model userData {
+  userId             Int       @id @default(autoincrement())
+  fullName           String    @db.VarChar(150)
+  email              String    @unique @db.VarChar(254)
+  refreshToken       String?
+  refreshTokenExpiry DateTime?
+  password           String
+  isActive           Boolean   @default(true)
+  isSuspended        Boolean   @default(false)
+  suspendedAt        DateTime?
+  role               String    @db.VarChar(20)
+  createDate         DateTime  @default(now())
+  updatedDate        DateTime  @updatedAt
+
+  companyProfile   companyProfile?
+  jobseekerProfile jobseekerProfile?
+  profilePic       profilePic?
+  resume           resume?
+}
+
+model companyProfile {
+  companyId       Int      @id @default(autoincrement())
+  about           String
+  companyType     String   @db.VarChar(100)
+  founded         String   @db.VarChar(100)
+  companySize     String   @db.VarChar(100)
+  website         String?  @db.VarChar(250)
+  bio             String?
+  isSubscription  Boolean  @default(false)
+  totalJobsPosted Int      @default(0)
+  createDate      DateTime @default(now())
+  updatedDate     DateTime @updatedAt
+
+  userId   Int      @unique
+  userData userData @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  jobs        jobs[]
+  userReports userReports[]
+}
+
+model jobseekerProfile {
+  jobseekerProfileId Int      @id @default(autoincrement())
+  location           String
+  mobileNumber       String   @db.VarChar(100)
+  dob                DateTime
+  gender             String   @db.VarChar(100)
+  createDate         DateTime @default(now())
+  updatedDate        DateTime @updatedAt
+
+  userId   Int      @unique
+  userData userData @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  JobseekerSkills    JobseekerSkills[]
+  jobseekerEducation jobseekerEducation[]
+  jobPreferences     jobPreferences[]
+  userReports        userReports[]
+  application        application[]
+}
+
+model profilePic {
+  profilePicId Int    @id @default(autoincrement())
+  profilePic   String
+
+  userId   Int?      @unique
+  userData userData? @relation(fields: [userId], references: [userId], onDelete: Cascade)
+}
+
+model JobseekerSkills {
+  jobseekerSkillsId  Int  @id @default(autoincrement())
+  jobseekerProfileId Int?
+  skillsId           Int
+
+  jobseekerProfile jobseekerProfile? @relation(fields: [jobseekerProfileId], references: [jobseekerProfileId], onDelete: Cascade)
+  skills           skills            @relation(fields: [skillsId], references: [skillsId], onDelete: Cascade)
+
+  @@unique([jobseekerProfileId, skillsId])
+}
+
+model userReports {
+  reportId           Int      @id @default(autoincrement())
+  issue              String
+  jobseekerProfileId Int
+  companyId          Int
+  createDate         DateTime @default(now())
+  updatedDate        DateTime @updatedAt
+
+  jobseekerProfile jobseekerProfile @relation(fields: [jobseekerProfileId], references: [jobseekerProfileId], onDelete: Cascade)
+  companyProfile   companyProfile   @relation(fields: [companyId], references: [companyId], onDelete: Cascade)
+
+  @@unique([companyId, jobseekerProfileId])
+}
+
+model skills {
+  skillsId    Int      @id @default(autoincrement())
+  title       String   @db.VarChar(250)
+  createDate  DateTime @default(now())
+  updatedDate DateTime @updatedAt
+
+  jobseekerSkills   JobseekerSkills[]
+  jobRequiredSkills jobRequiredSkills[]
+}
+
+model resume {
+  resumeId    Int      @id @default(autoincrement())
+  resume      String
+  userId      Int?     @unique
+  createDate  DateTime @default(now())
+  updatedDate DateTime @updatedAt
+
+  userData userData? @relation(fields: [userId], references: [userId], onDelete: Cascade)
+}
+
+model jobseekerEducation {
+  jobseekerEducationId Int      @id @default(autoincrement())
+  jobseekerProfileId   Int?
+  education            String   @db.VarChar(250)
+  course               String   @db.VarChar(250)
+  createDate           DateTime @default(now())
+  updatedDate          DateTime @updatedAt
+
+  jobseekerProfile jobseekerProfile? @relation(fields: [jobseekerProfileId], references: [jobseekerProfileId], onDelete: Cascade)
+}
+
+model jobPreferences {
+  jobPreferencesId   Int  @id @default(autoincrement())
+  industryId         Int
+  jobseekerProfileId Int?
+
+  createDate       DateTime          @default(now())
+  updatedDate      DateTime          @updatedAt
+  industry         industry          @relation(fields: [industryId], references: [industryId], onDelete: Cascade)
+  jobseekerProfile jobseekerProfile? @relation(fields: [jobseekerProfileId], references: [jobseekerProfileId], onDelete: Cascade)
+}
+
+model industry {
+  industryId  Int      @id @default(autoincrement())
+  title       String   @db.VarChar(250)
+  createDate  DateTime @default(now())
+  updatedDate DateTime @updatedAt
+
+  jobIndustries  jobIndustries[]
+  jobPreferences jobPreferences[]
+}
+
+model jobs {
+  jobId          Int    @id @default(autoincrement())
+  title          String @db.VarChar(250)
+  location       String @db.VarChar(100)
+  salary         String @db.VarChar(100)
+  role           String @db.VarChar(100)
+  employmentType String @db.VarChar(100)
+  desc           String
+
+  paymentId Int? @unique
+
+  expiryDate  DateTime
+  createDate  DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  companyId   Int
+
+  companyProfile companyProfile @relation(fields: [companyId], references: [companyId], onDelete: Cascade)
+  payment        payment?       @relation(fields: [paymentId], references: [paymentId], onDelete: SetNull)
+
+  jobIndustries      jobIndustries[]
+  jobResponsiblities jobResponsiblities[]
+  jobQualifications  jobQualifications[]
+  jobRequiredSkills  jobRequiredSkills[]
+  application        application[]
+}
+
+model payment {
+  paymentId      Int     @id @default(autoincrement())
+  premiumType    String  @db.VarChar(100)
+  paymentChannel String  @db.VarChar(100)
+  paymentToken   String
+  amount         Decimal @db.Decimal(10, 2)
+
+  job         jobs?
+  createDate  DateTime @default(now())
+  updatedDate DateTime @updatedAt
+}
+
+model jobIndustries {
+  jobIndustriesId Int      @id @default(autoincrement())
+  industryId      Int
+  jobId           Int
+  createDate      DateTime @default(now())
+  updatedDate     DateTime @updatedAt
+
+  industry industry @relation(fields: [industryId], references: [industryId], onDelete: Cascade)
+  jobs     jobs     @relation(fields: [jobId], references: [jobId], onDelete: Cascade)
+}
+
+model jobResponsiblities {
+  jobResponsiblitiesID Int      @id @default(autoincrement())
+  title                String
+  jobId                Int
+  createDate           DateTime @default(now())
+  updatedDate          DateTime @updatedAt
+  jobs                 jobs     @relation(fields: [jobId], references: [jobId], onDelete: Cascade)
+}
+
+model jobQualifications {
+  jobQualificationsId Int      @id @default(autoincrement())
+  title               String
+  jobId               Int
+  createDate          DateTime @default(now())
+  updatedDate         DateTime @updatedAt
+  jobs                jobs     @relation(fields: [jobId], references: [jobId], onDelete: Cascade)
+}
+
+model jobRequiredSkills {
+  jobRequiredSkillsId Int      @id @default(autoincrement())
+  jobId               Int
+  skillsId            Int
+  createDate          DateTime @default(now())
+  updatedDate         DateTime @updatedAt
+  jobs                jobs     @relation(fields: [jobId], references: [jobId], onDelete: Cascade)
+  skills              skills   @relation(fields: [skillsId], references: [skillsId], onDelete: Cascade)
+}
+
+model application {
+  applicationId      Int              @id @default(autoincrement())
+  status             String           @db.VarChar(100)
+  expiryTime         DateTime
+  createDate         DateTime         @default(now())
+  updatedDate        DateTime         @updatedAt
+  jobId              Int
+  jobseekerProfileId Int
+  jobs               jobs             @relation(fields: [jobId], references: [jobId], onDelete: Cascade)
+  jobseekerProfile   jobseekerProfile @relation(fields: [jobseekerProfileId], references: [jobseekerProfileId], onDelete: Cascade)
+
+  @@unique([jobId, jobseekerProfileId])
+}

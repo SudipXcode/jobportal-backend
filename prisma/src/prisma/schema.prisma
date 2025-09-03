@@ -60,13 +60,17 @@ model companyProfile {
 }
 
 model jobseekerProfile {
-  jobseekerProfileId Int      @id @default(autoincrement())
+  jobseekerProfileId Int    @id @default(autoincrement())
   location           String
-  mobileNumber       String   @db.VarChar(100)
-  dob                DateTime
-  gender             String   @db.VarChar(100)
-  createDate         DateTime @default(now())
-  updatedDate        DateTime @updatedAt
+  mobileNumber       String @db.VarChar(100)
+  email              String @unique @db.VarChar(254)
+
+  firstName         String   @db.VarChar(100)
+  lastName          String   @db.VarChar(100)
+  bio               String
+  professionalTitle String
+  createDate        DateTime @default(now())
+  updatedDate       DateTime @updatedAt
 
   userId   Int      @unique
   userData userData @relation(fields: [userId], references: [userId], onDelete: Cascade)

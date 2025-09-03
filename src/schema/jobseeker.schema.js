@@ -4,24 +4,15 @@ export const jobseekerProfileSchema = z.object({
     location: z
         .string()
         .min(2, { message: "Location must be at least 2 characters long" }),
-
+    firstName: z.string().min(3, { message: "First name must be at least 3 character long" }),
+    lastName: z.string().min(3, { message: "last name must be at least 3 character long" }),
     mobileNumber: z
         .string()
         .regex(/^\d{10}$/, { message: "Mobile number must be 10 digits" }),
 
-    dob: z
-        .string()
-        .refine((val) => !isNaN(Date.parse(val)), {
-            message: "Invalid date format",
-        })
-        .transform((val) => new Date(val)),
-
-    gender: z
-        .string()
-        .refine(
-            (val) => ["Male", "Female", "Others"].includes(val),
-            { message: "Gender must be Male, Female, or Others" }
-        ),
+    email: z.email("invalid email format"),
+    bio: z.string(),
+    professionalTitle: z.string()
 })
 
 export const jobseekerSkillsSchema = z.array(

@@ -8,7 +8,7 @@ import { upload } from '../middleware/validateBinary.middleware.js'
 
 router.post('/jobseekerProfile', upload.single("photo"), validateReq(jobseekerProfileSchema), validateAccessToken(), handleCreateJobseekerProfile)
 router.get("/jobseekerProfile", validateAccessToken(), handleGetJobseekerprofile)
-
+router.get("/user", validateAccessToken(), handleGetUser)
 router.patch("/updateJobseekerProfile/:id", upload.single("photo"), validateIdParam(), validateReq(jobseekerProfileSchema), validateAccessToken(), handleUpdateJobseekerProfile)
 
 router.post('/jobseekerDetils', upload.single("resume"), validateReq(jobseekerDetailsSchema), validateAccessToken(), handleCreateJobseekerDetails)

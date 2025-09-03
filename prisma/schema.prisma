@@ -65,8 +65,12 @@ model jobseekerProfile {
   jobseekerProfileId  Int                 @id @default(autoincrement())
   location            String
   mobileNumber        String              @db.VarChar(100)
-  dob                 DateTime
-  gender              String              @db.VarChar(100)
+  email               String           @unique @db.VarChar(254)
+  
+  firstName              String              @db.VarChar(100)
+  lastName              String              @db.VarChar(100)
+  bio              String   
+  professionalTitle              String                       
   createDate          DateTime            @default(now())
   updatedDate         DateTime            @updatedAt
 

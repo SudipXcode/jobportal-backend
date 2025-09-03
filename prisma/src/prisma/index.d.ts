@@ -6347,8 +6347,11 @@ export namespace Prisma {
     jobseekerProfileId: number | null
     location: string | null
     mobileNumber: string | null
-    dob: Date | null
-    gender: string | null
+    email: string | null
+    firstName: string | null
+    lastName: string | null
+    bio: string | null
+    professionalTitle: string | null
     createDate: Date | null
     updatedDate: Date | null
     userId: number | null
@@ -6358,8 +6361,11 @@ export namespace Prisma {
     jobseekerProfileId: number | null
     location: string | null
     mobileNumber: string | null
-    dob: Date | null
-    gender: string | null
+    email: string | null
+    firstName: string | null
+    lastName: string | null
+    bio: string | null
+    professionalTitle: string | null
     createDate: Date | null
     updatedDate: Date | null
     userId: number | null
@@ -6369,8 +6375,11 @@ export namespace Prisma {
     jobseekerProfileId: number
     location: number
     mobileNumber: number
-    dob: number
-    gender: number
+    email: number
+    firstName: number
+    lastName: number
+    bio: number
+    professionalTitle: number
     createDate: number
     updatedDate: number
     userId: number
@@ -6392,8 +6401,11 @@ export namespace Prisma {
     jobseekerProfileId?: true
     location?: true
     mobileNumber?: true
-    dob?: true
-    gender?: true
+    email?: true
+    firstName?: true
+    lastName?: true
+    bio?: true
+    professionalTitle?: true
     createDate?: true
     updatedDate?: true
     userId?: true
@@ -6403,8 +6415,11 @@ export namespace Prisma {
     jobseekerProfileId?: true
     location?: true
     mobileNumber?: true
-    dob?: true
-    gender?: true
+    email?: true
+    firstName?: true
+    lastName?: true
+    bio?: true
+    professionalTitle?: true
     createDate?: true
     updatedDate?: true
     userId?: true
@@ -6414,8 +6429,11 @@ export namespace Prisma {
     jobseekerProfileId?: true
     location?: true
     mobileNumber?: true
-    dob?: true
-    gender?: true
+    email?: true
+    firstName?: true
+    lastName?: true
+    bio?: true
+    professionalTitle?: true
     createDate?: true
     updatedDate?: true
     userId?: true
@@ -6512,8 +6530,11 @@ export namespace Prisma {
     jobseekerProfileId: number
     location: string
     mobileNumber: string
-    dob: Date
-    gender: string
+    email: string
+    firstName: string
+    lastName: string
+    bio: string
+    professionalTitle: string
     createDate: Date
     updatedDate: Date
     userId: number
@@ -6542,8 +6563,11 @@ export namespace Prisma {
     jobseekerProfileId?: boolean
     location?: boolean
     mobileNumber?: boolean
-    dob?: boolean
-    gender?: boolean
+    email?: boolean
+    firstName?: boolean
+    lastName?: boolean
+    bio?: boolean
+    professionalTitle?: boolean
     createDate?: boolean
     updatedDate?: boolean
     userId?: boolean
@@ -6560,8 +6584,11 @@ export namespace Prisma {
     jobseekerProfileId?: boolean
     location?: boolean
     mobileNumber?: boolean
-    dob?: boolean
-    gender?: boolean
+    email?: boolean
+    firstName?: boolean
+    lastName?: boolean
+    bio?: boolean
+    professionalTitle?: boolean
     createDate?: boolean
     updatedDate?: boolean
     userId?: boolean
@@ -6572,8 +6599,11 @@ export namespace Prisma {
     jobseekerProfileId?: boolean
     location?: boolean
     mobileNumber?: boolean
-    dob?: boolean
-    gender?: boolean
+    email?: boolean
+    firstName?: boolean
+    lastName?: boolean
+    bio?: boolean
+    professionalTitle?: boolean
     createDate?: boolean
     updatedDate?: boolean
     userId?: boolean
@@ -6584,14 +6614,17 @@ export namespace Prisma {
     jobseekerProfileId?: boolean
     location?: boolean
     mobileNumber?: boolean
-    dob?: boolean
-    gender?: boolean
+    email?: boolean
+    firstName?: boolean
+    lastName?: boolean
+    bio?: boolean
+    professionalTitle?: boolean
     createDate?: boolean
     updatedDate?: boolean
     userId?: boolean
   }
 
-  export type jobseekerProfileOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"jobseekerProfileId" | "location" | "mobileNumber" | "dob" | "gender" | "createDate" | "updatedDate" | "userId", ExtArgs["result"]["jobseekerProfile"]>
+  export type jobseekerProfileOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"jobseekerProfileId" | "location" | "mobileNumber" | "email" | "firstName" | "lastName" | "bio" | "professionalTitle" | "createDate" | "updatedDate" | "userId", ExtArgs["result"]["jobseekerProfile"]>
   export type jobseekerProfileInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     userData?: boolean | userDataDefaultArgs<ExtArgs>
     JobseekerSkills?: boolean | jobseekerProfile$JobseekerSkillsArgs<ExtArgs>
@@ -6622,8 +6655,11 @@ export namespace Prisma {
       jobseekerProfileId: number
       location: string
       mobileNumber: string
-      dob: Date
-      gender: string
+      email: string
+      firstName: string
+      lastName: string
+      bio: string
+      professionalTitle: string
       createDate: Date
       updatedDate: Date
       userId: number
@@ -7059,8 +7095,11 @@ export namespace Prisma {
     readonly jobseekerProfileId: FieldRef<"jobseekerProfile", 'Int'>
     readonly location: FieldRef<"jobseekerProfile", 'String'>
     readonly mobileNumber: FieldRef<"jobseekerProfile", 'String'>
-    readonly dob: FieldRef<"jobseekerProfile", 'DateTime'>
-    readonly gender: FieldRef<"jobseekerProfile", 'String'>
+    readonly email: FieldRef<"jobseekerProfile", 'String'>
+    readonly firstName: FieldRef<"jobseekerProfile", 'String'>
+    readonly lastName: FieldRef<"jobseekerProfile", 'String'>
+    readonly bio: FieldRef<"jobseekerProfile", 'String'>
+    readonly professionalTitle: FieldRef<"jobseekerProfile", 'String'>
     readonly createDate: FieldRef<"jobseekerProfile", 'DateTime'>
     readonly updatedDate: FieldRef<"jobseekerProfile", 'DateTime'>
     readonly userId: FieldRef<"jobseekerProfile", 'Int'>
@@ -24614,8 +24653,11 @@ export namespace Prisma {
     jobseekerProfileId: 'jobseekerProfileId',
     location: 'location',
     mobileNumber: 'mobileNumber',
-    dob: 'dob',
-    gender: 'gender',
+    email: 'email',
+    firstName: 'firstName',
+    lastName: 'lastName',
+    bio: 'bio',
+    professionalTitle: 'professionalTitle',
     createDate: 'createDate',
     updatedDate: 'updatedDate',
     userId: 'userId'
@@ -25180,8 +25222,11 @@ export namespace Prisma {
     jobseekerProfileId?: IntFilter<"jobseekerProfile"> | number
     location?: StringFilter<"jobseekerProfile"> | string
     mobileNumber?: StringFilter<"jobseekerProfile"> | string
-    dob?: DateTimeFilter<"jobseekerProfile"> | Date | string
-    gender?: StringFilter<"jobseekerProfile"> | string
+    email?: StringFilter<"jobseekerProfile"> | string
+    firstName?: StringFilter<"jobseekerProfile"> | string
+    lastName?: StringFilter<"jobseekerProfile"> | string
+    bio?: StringFilter<"jobseekerProfile"> | string
+    professionalTitle?: StringFilter<"jobseekerProfile"> | string
     createDate?: DateTimeFilter<"jobseekerProfile"> | Date | string
     updatedDate?: DateTimeFilter<"jobseekerProfile"> | Date | string
     userId?: IntFilter<"jobseekerProfile"> | number
@@ -25197,8 +25242,11 @@ export namespace Prisma {
     jobseekerProfileId?: SortOrder
     location?: SortOrder
     mobileNumber?: SortOrder
-    dob?: SortOrder
-    gender?: SortOrder
+    email?: SortOrder
+    firstName?: SortOrder
+    lastName?: SortOrder
+    bio?: SortOrder
+    professionalTitle?: SortOrder
     createDate?: SortOrder
     updatedDate?: SortOrder
     userId?: SortOrder
@@ -25212,14 +25260,17 @@ export namespace Prisma {
 
   export type jobseekerProfileWhereUniqueInput = Prisma.AtLeast<{
     jobseekerProfileId?: number
+    email?: string
     userId?: number
     AND?: jobseekerProfileWhereInput | jobseekerProfileWhereInput[]
     OR?: jobseekerProfileWhereInput[]
     NOT?: jobseekerProfileWhereInput | jobseekerProfileWhereInput[]
     location?: StringFilter<"jobseekerProfile"> | string
     mobileNumber?: StringFilter<"jobseekerProfile"> | string
-    dob?: DateTimeFilter<"jobseekerProfile"> | Date | string
-    gender?: StringFilter<"jobseekerProfile"> | string
+    firstName?: StringFilter<"jobseekerProfile"> | string
+    lastName?: StringFilter<"jobseekerProfile"> | string
+    bio?: StringFilter<"jobseekerProfile"> | string
+    professionalTitle?: StringFilter<"jobseekerProfile"> | string
     createDate?: DateTimeFilter<"jobseekerProfile"> | Date | string
     updatedDate?: DateTimeFilter<"jobseekerProfile"> | Date | string
     userData?: XOR<UserDataScalarRelationFilter, userDataWhereInput>
@@ -25228,14 +25279,17 @@ export namespace Prisma {
     jobPreferences?: JobPreferencesListRelationFilter
     userReports?: UserReportsListRelationFilter
     application?: ApplicationListRelationFilter
-  }, "jobseekerProfileId" | "userId">
+  }, "jobseekerProfileId" | "email" | "userId">
 
   export type jobseekerProfileOrderByWithAggregationInput = {
     jobseekerProfileId?: SortOrder
     location?: SortOrder
     mobileNumber?: SortOrder
-    dob?: SortOrder
-    gender?: SortOrder
+    email?: SortOrder
+    firstName?: SortOrder
+    lastName?: SortOrder
+    bio?: SortOrder
+    professionalTitle?: SortOrder
     createDate?: SortOrder
     updatedDate?: SortOrder
     userId?: SortOrder
@@ -25253,8 +25307,11 @@ export namespace Prisma {
     jobseekerProfileId?: IntWithAggregatesFilter<"jobseekerProfile"> | number
     location?: StringWithAggregatesFilter<"jobseekerProfile"> | string
     mobileNumber?: StringWithAggregatesFilter<"jobseekerProfile"> | string
-    dob?: DateTimeWithAggregatesFilter<"jobseekerProfile"> | Date | string
-    gender?: StringWithAggregatesFilter<"jobseekerProfile"> | string
+    email?: StringWithAggregatesFilter<"jobseekerProfile"> | string
+    firstName?: StringWithAggregatesFilter<"jobseekerProfile"> | string
+    lastName?: StringWithAggregatesFilter<"jobseekerProfile"> | string
+    bio?: StringWithAggregatesFilter<"jobseekerProfile"> | string
+    professionalTitle?: StringWithAggregatesFilter<"jobseekerProfile"> | string
     createDate?: DateTimeWithAggregatesFilter<"jobseekerProfile"> | Date | string
     updatedDate?: DateTimeWithAggregatesFilter<"jobseekerProfile"> | Date | string
     userId?: IntWithAggregatesFilter<"jobseekerProfile"> | number
@@ -26499,8 +26556,11 @@ export namespace Prisma {
   export type jobseekerProfileCreateInput = {
     location: string
     mobileNumber: string
-    dob: Date | string
-    gender: string
+    email: string
+    firstName: string
+    lastName: string
+    bio: string
+    professionalTitle: string
     createDate?: Date | string
     updatedDate?: Date | string
     userData: userDataCreateNestedOneWithoutJobseekerProfileInput
@@ -26515,8 +26575,11 @@ export namespace Prisma {
     jobseekerProfileId?: number
     location: string
     mobileNumber: string
-    dob: Date | string
-    gender: string
+    email: string
+    firstName: string
+    lastName: string
+    bio: string
+    professionalTitle: string
     createDate?: Date | string
     updatedDate?: Date | string
     userId: number
@@ -26530,8 +26593,11 @@ export namespace Prisma {
   export type jobseekerProfileUpdateInput = {
     location?: StringFieldUpdateOperationsInput | string
     mobileNumber?: StringFieldUpdateOperationsInput | string
-    dob?: DateTimeFieldUpdateOperationsInput | Date | string
-    gender?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    professionalTitle?: StringFieldUpdateOperationsInput | string
     createDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     userData?: userDataUpdateOneRequiredWithoutJobseekerProfileNestedInput
@@ -26546,8 +26612,11 @@ export namespace Prisma {
     jobseekerProfileId?: IntFieldUpdateOperationsInput | number
     location?: StringFieldUpdateOperationsInput | string
     mobileNumber?: StringFieldUpdateOperationsInput | string
-    dob?: DateTimeFieldUpdateOperationsInput | Date | string
-    gender?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    professionalTitle?: StringFieldUpdateOperationsInput | string
     createDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: IntFieldUpdateOperationsInput | number
@@ -26562,8 +26631,11 @@ export namespace Prisma {
     jobseekerProfileId?: number
     location: string
     mobileNumber: string
-    dob: Date | string
-    gender: string
+    email: string
+    firstName: string
+    lastName: string
+    bio: string
+    professionalTitle: string
     createDate?: Date | string
     updatedDate?: Date | string
     userId: number
@@ -26572,8 +26644,11 @@ export namespace Prisma {
   export type jobseekerProfileUpdateManyMutationInput = {
     location?: StringFieldUpdateOperationsInput | string
     mobileNumber?: StringFieldUpdateOperationsInput | string
-    dob?: DateTimeFieldUpdateOperationsInput | Date | string
-    gender?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    professionalTitle?: StringFieldUpdateOperationsInput | string
     createDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -26582,8 +26657,11 @@ export namespace Prisma {
     jobseekerProfileId?: IntFieldUpdateOperationsInput | number
     location?: StringFieldUpdateOperationsInput | string
     mobileNumber?: StringFieldUpdateOperationsInput | string
-    dob?: DateTimeFieldUpdateOperationsInput | Date | string
-    gender?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    professionalTitle?: StringFieldUpdateOperationsInput | string
     createDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: IntFieldUpdateOperationsInput | number
@@ -27856,8 +27934,11 @@ export namespace Prisma {
     jobseekerProfileId?: SortOrder
     location?: SortOrder
     mobileNumber?: SortOrder
-    dob?: SortOrder
-    gender?: SortOrder
+    email?: SortOrder
+    firstName?: SortOrder
+    lastName?: SortOrder
+    bio?: SortOrder
+    professionalTitle?: SortOrder
     createDate?: SortOrder
     updatedDate?: SortOrder
     userId?: SortOrder
@@ -27872,8 +27953,11 @@ export namespace Prisma {
     jobseekerProfileId?: SortOrder
     location?: SortOrder
     mobileNumber?: SortOrder
-    dob?: SortOrder
-    gender?: SortOrder
+    email?: SortOrder
+    firstName?: SortOrder
+    lastName?: SortOrder
+    bio?: SortOrder
+    professionalTitle?: SortOrder
     createDate?: SortOrder
     updatedDate?: SortOrder
     userId?: SortOrder
@@ -27883,8 +27967,11 @@ export namespace Prisma {
     jobseekerProfileId?: SortOrder
     location?: SortOrder
     mobileNumber?: SortOrder
-    dob?: SortOrder
-    gender?: SortOrder
+    email?: SortOrder
+    firstName?: SortOrder
+    lastName?: SortOrder
+    bio?: SortOrder
+    professionalTitle?: SortOrder
     createDate?: SortOrder
     updatedDate?: SortOrder
     userId?: SortOrder
@@ -30034,8 +30121,11 @@ export namespace Prisma {
   export type jobseekerProfileCreateWithoutUserDataInput = {
     location: string
     mobileNumber: string
-    dob: Date | string
-    gender: string
+    email: string
+    firstName: string
+    lastName: string
+    bio: string
+    professionalTitle: string
     createDate?: Date | string
     updatedDate?: Date | string
     JobseekerSkills?: JobseekerSkillsCreateNestedManyWithoutJobseekerProfileInput
@@ -30049,8 +30139,11 @@ export namespace Prisma {
     jobseekerProfileId?: number
     location: string
     mobileNumber: string
-    dob: Date | string
-    gender: string
+    email: string
+    firstName: string
+    lastName: string
+    bio: string
+    professionalTitle: string
     createDate?: Date | string
     updatedDate?: Date | string
     JobseekerSkills?: JobseekerSkillsUncheckedCreateNestedManyWithoutJobseekerProfileInput
@@ -30153,8 +30246,11 @@ export namespace Prisma {
   export type jobseekerProfileUpdateWithoutUserDataInput = {
     location?: StringFieldUpdateOperationsInput | string
     mobileNumber?: StringFieldUpdateOperationsInput | string
-    dob?: DateTimeFieldUpdateOperationsInput | Date | string
-    gender?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    professionalTitle?: StringFieldUpdateOperationsInput | string
     createDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     JobseekerSkills?: JobseekerSkillsUpdateManyWithoutJobseekerProfileNestedInput
@@ -30168,8 +30264,11 @@ export namespace Prisma {
     jobseekerProfileId?: IntFieldUpdateOperationsInput | number
     location?: StringFieldUpdateOperationsInput | string
     mobileNumber?: StringFieldUpdateOperationsInput | string
-    dob?: DateTimeFieldUpdateOperationsInput | Date | string
-    gender?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    professionalTitle?: StringFieldUpdateOperationsInput | string
     createDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     JobseekerSkills?: JobseekerSkillsUncheckedUpdateManyWithoutJobseekerProfileNestedInput
@@ -30862,8 +30961,11 @@ export namespace Prisma {
   export type jobseekerProfileCreateWithoutJobseekerSkillsInput = {
     location: string
     mobileNumber: string
-    dob: Date | string
-    gender: string
+    email: string
+    firstName: string
+    lastName: string
+    bio: string
+    professionalTitle: string
     createDate?: Date | string
     updatedDate?: Date | string
     userData: userDataCreateNestedOneWithoutJobseekerProfileInput
@@ -30877,8 +30979,11 @@ export namespace Prisma {
     jobseekerProfileId?: number
     location: string
     mobileNumber: string
-    dob: Date | string
-    gender: string
+    email: string
+    firstName: string
+    lastName: string
+    bio: string
+    professionalTitle: string
     createDate?: Date | string
     updatedDate?: Date | string
     userId: number
@@ -30927,8 +31032,11 @@ export namespace Prisma {
   export type jobseekerProfileUpdateWithoutJobseekerSkillsInput = {
     location?: StringFieldUpdateOperationsInput | string
     mobileNumber?: StringFieldUpdateOperationsInput | string
-    dob?: DateTimeFieldUpdateOperationsInput | Date | string
-    gender?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    professionalTitle?: StringFieldUpdateOperationsInput | string
     createDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     userData?: userDataUpdateOneRequiredWithoutJobseekerProfileNestedInput
@@ -30942,8 +31050,11 @@ export namespace Prisma {
     jobseekerProfileId?: IntFieldUpdateOperationsInput | number
     location?: StringFieldUpdateOperationsInput | string
     mobileNumber?: StringFieldUpdateOperationsInput | string
-    dob?: DateTimeFieldUpdateOperationsInput | Date | string
-    gender?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    professionalTitle?: StringFieldUpdateOperationsInput | string
     createDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: IntFieldUpdateOperationsInput | number
@@ -30982,8 +31093,11 @@ export namespace Prisma {
   export type jobseekerProfileCreateWithoutUserReportsInput = {
     location: string
     mobileNumber: string
-    dob: Date | string
-    gender: string
+    email: string
+    firstName: string
+    lastName: string
+    bio: string
+    professionalTitle: string
     createDate?: Date | string
     updatedDate?: Date | string
     userData: userDataCreateNestedOneWithoutJobseekerProfileInput
@@ -30997,8 +31111,11 @@ export namespace Prisma {
     jobseekerProfileId?: number
     location: string
     mobileNumber: string
-    dob: Date | string
-    gender: string
+    email: string
+    firstName: string
+    lastName: string
+    bio: string
+    professionalTitle: string
     createDate?: Date | string
     updatedDate?: Date | string
     userId: number
@@ -31063,8 +31180,11 @@ export namespace Prisma {
   export type jobseekerProfileUpdateWithoutUserReportsInput = {
     location?: StringFieldUpdateOperationsInput | string
     mobileNumber?: StringFieldUpdateOperationsInput | string
-    dob?: DateTimeFieldUpdateOperationsInput | Date | string
-    gender?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    professionalTitle?: StringFieldUpdateOperationsInput | string
     createDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     userData?: userDataUpdateOneRequiredWithoutJobseekerProfileNestedInput
@@ -31078,8 +31198,11 @@ export namespace Prisma {
     jobseekerProfileId?: IntFieldUpdateOperationsInput | number
     location?: StringFieldUpdateOperationsInput | string
     mobileNumber?: StringFieldUpdateOperationsInput | string
-    dob?: DateTimeFieldUpdateOperationsInput | Date | string
-    gender?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    professionalTitle?: StringFieldUpdateOperationsInput | string
     createDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: IntFieldUpdateOperationsInput | number
@@ -31305,8 +31428,11 @@ export namespace Prisma {
   export type jobseekerProfileCreateWithoutJobseekerEducationInput = {
     location: string
     mobileNumber: string
-    dob: Date | string
-    gender: string
+    email: string
+    firstName: string
+    lastName: string
+    bio: string
+    professionalTitle: string
     createDate?: Date | string
     updatedDate?: Date | string
     userData: userDataCreateNestedOneWithoutJobseekerProfileInput
@@ -31320,8 +31446,11 @@ export namespace Prisma {
     jobseekerProfileId?: number
     location: string
     mobileNumber: string
-    dob: Date | string
-    gender: string
+    email: string
+    firstName: string
+    lastName: string
+    bio: string
+    professionalTitle: string
     createDate?: Date | string
     updatedDate?: Date | string
     userId: number
@@ -31350,8 +31479,11 @@ export namespace Prisma {
   export type jobseekerProfileUpdateWithoutJobseekerEducationInput = {
     location?: StringFieldUpdateOperationsInput | string
     mobileNumber?: StringFieldUpdateOperationsInput | string
-    dob?: DateTimeFieldUpdateOperationsInput | Date | string
-    gender?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    professionalTitle?: StringFieldUpdateOperationsInput | string
     createDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     userData?: userDataUpdateOneRequiredWithoutJobseekerProfileNestedInput
@@ -31365,8 +31497,11 @@ export namespace Prisma {
     jobseekerProfileId?: IntFieldUpdateOperationsInput | number
     location?: StringFieldUpdateOperationsInput | string
     mobileNumber?: StringFieldUpdateOperationsInput | string
-    dob?: DateTimeFieldUpdateOperationsInput | Date | string
-    gender?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    professionalTitle?: StringFieldUpdateOperationsInput | string
     createDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: IntFieldUpdateOperationsInput | number
@@ -31399,8 +31534,11 @@ export namespace Prisma {
   export type jobseekerProfileCreateWithoutJobPreferencesInput = {
     location: string
     mobileNumber: string
-    dob: Date | string
-    gender: string
+    email: string
+    firstName: string
+    lastName: string
+    bio: string
+    professionalTitle: string
     createDate?: Date | string
     updatedDate?: Date | string
     userData: userDataCreateNestedOneWithoutJobseekerProfileInput
@@ -31414,8 +31552,11 @@ export namespace Prisma {
     jobseekerProfileId?: number
     location: string
     mobileNumber: string
-    dob: Date | string
-    gender: string
+    email: string
+    firstName: string
+    lastName: string
+    bio: string
+    professionalTitle: string
     createDate?: Date | string
     updatedDate?: Date | string
     userId: number
@@ -31470,8 +31611,11 @@ export namespace Prisma {
   export type jobseekerProfileUpdateWithoutJobPreferencesInput = {
     location?: StringFieldUpdateOperationsInput | string
     mobileNumber?: StringFieldUpdateOperationsInput | string
-    dob?: DateTimeFieldUpdateOperationsInput | Date | string
-    gender?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    professionalTitle?: StringFieldUpdateOperationsInput | string
     createDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     userData?: userDataUpdateOneRequiredWithoutJobseekerProfileNestedInput
@@ -31485,8 +31629,11 @@ export namespace Prisma {
     jobseekerProfileId?: IntFieldUpdateOperationsInput | number
     location?: StringFieldUpdateOperationsInput | string
     mobileNumber?: StringFieldUpdateOperationsInput | string
-    dob?: DateTimeFieldUpdateOperationsInput | Date | string
-    gender?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    professionalTitle?: StringFieldUpdateOperationsInput | string
     createDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: IntFieldUpdateOperationsInput | number
@@ -32525,8 +32672,11 @@ export namespace Prisma {
   export type jobseekerProfileCreateWithoutApplicationInput = {
     location: string
     mobileNumber: string
-    dob: Date | string
-    gender: string
+    email: string
+    firstName: string
+    lastName: string
+    bio: string
+    professionalTitle: string
     createDate?: Date | string
     updatedDate?: Date | string
     userData: userDataCreateNestedOneWithoutJobseekerProfileInput
@@ -32540,8 +32690,11 @@ export namespace Prisma {
     jobseekerProfileId?: number
     location: string
     mobileNumber: string
-    dob: Date | string
-    gender: string
+    email: string
+    firstName: string
+    lastName: string
+    bio: string
+    professionalTitle: string
     createDate?: Date | string
     updatedDate?: Date | string
     userId: number
@@ -32618,8 +32771,11 @@ export namespace Prisma {
   export type jobseekerProfileUpdateWithoutApplicationInput = {
     location?: StringFieldUpdateOperationsInput | string
     mobileNumber?: StringFieldUpdateOperationsInput | string
-    dob?: DateTimeFieldUpdateOperationsInput | Date | string
-    gender?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    professionalTitle?: StringFieldUpdateOperationsInput | string
     createDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     userData?: userDataUpdateOneRequiredWithoutJobseekerProfileNestedInput
@@ -32633,8 +32789,11 @@ export namespace Prisma {
     jobseekerProfileId?: IntFieldUpdateOperationsInput | number
     location?: StringFieldUpdateOperationsInput | string
     mobileNumber?: StringFieldUpdateOperationsInput | string
-    dob?: DateTimeFieldUpdateOperationsInput | Date | string
-    gender?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    bio?: StringFieldUpdateOperationsInput | string
+    professionalTitle?: StringFieldUpdateOperationsInput | string
     createDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: IntFieldUpdateOperationsInput | number

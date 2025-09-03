@@ -31,6 +31,7 @@ export const getProfilePicture = async (userId) => {
 export const createJobseekerProfile = async ({ userId, data }) => {
 
     try {
+        
         const existingProfile = await prisma.jobseekerProfile.findUnique({
             where: { userId }
         });
@@ -43,7 +44,7 @@ export const createJobseekerProfile = async ({ userId, data }) => {
 
         const userData = await prisma.jobseekerProfile.create({
             data: {
-                userId: userId,
+                // userId: userId,
                 ...data
             }
         });

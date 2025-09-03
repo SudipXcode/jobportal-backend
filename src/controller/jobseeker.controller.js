@@ -11,6 +11,7 @@ export const handleCreateJobseekerProfile = async (req, res, next) => {
                 success: false,
             });
         }
+        console.log(data)
         const jobseekerProfile = await createJobseekerProfile({
             userId: decoded.userId,
             data

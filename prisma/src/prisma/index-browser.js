@@ -165,8 +165,11 @@ exports.Prisma.JobseekerProfileScalarFieldEnum = {
   jobseekerProfileId: 'jobseekerProfileId',
   location: 'location',
   mobileNumber: 'mobileNumber',
-  dob: 'dob',
-  gender: 'gender',
+  email: 'email',
+  firstName: 'firstName',
+  lastName: 'lastName',
+  bio: 'bio',
+  professionalTitle: 'professionalTitle',
   createDate: 'createDate',
   updatedDate: 'updatedDate',
   userId: 'userId'
